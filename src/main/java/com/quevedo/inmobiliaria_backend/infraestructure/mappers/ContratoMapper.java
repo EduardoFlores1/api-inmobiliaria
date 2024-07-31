@@ -2,6 +2,7 @@ package com.quevedo.inmobiliaria_backend.infraestructure.mappers;
 
 import com.quevedo.inmobiliaria_backend.domain.models.Contrato;
 import com.quevedo.inmobiliaria_backend.infraestructure.entities.ContratoEntity;
+import com.quevedo.inmobiliaria_backend.presentation.dtos.contrato.ContratoDTO;
 
 public class ContratoMapper {
 
@@ -28,5 +29,17 @@ public class ContratoMapper {
                 .cargo(CargoMapper.fromEntity(contrato.getCargo()))
                 .createAt(contrato.getCreatAt())
                 .build();
+    }
+
+    public static ContratoDTO toResponse(Contrato contrato) {
+        return new ContratoDTO(
+                contrato.getIdContrato(),
+                contrato.getFechaInicio().toString(),
+                contrato.getFechaFin().toString(),
+                contrato.getTipoContrato(),
+                CargoMapper.toResponse(contrato.getCargo()),
+                contrato.getCreateAt().toString(),
+                contrato.getEstado()
+        );
     }
 }

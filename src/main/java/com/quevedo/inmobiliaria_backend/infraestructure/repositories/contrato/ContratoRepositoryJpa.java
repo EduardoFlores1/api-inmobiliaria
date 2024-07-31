@@ -38,4 +38,12 @@ public class ContratoRepositoryJpa implements IContratoRepository {
     public void delete(Long id) {
         contratoRepositoryJpa.setEstadoFalse(id);
     }
+
+    @Override
+    public List<Contrato> readAllByEmpleadoId(Long id) {
+        return contratoRepositoryJpa.contratosByEmpleadoId(id)
+                .stream()
+                .map(ContratoMapper::fromEntity)
+                .toList();
+    }
 }
