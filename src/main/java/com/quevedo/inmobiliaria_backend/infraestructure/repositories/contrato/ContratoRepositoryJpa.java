@@ -1,8 +1,10 @@
 package com.quevedo.inmobiliaria_backend.infraestructure.repositories.contrato;
 
 import com.quevedo.inmobiliaria_backend.domain.models.Contrato;
-import com.quevedo.inmobiliaria_backend.domain.repositories.IContratoRepository;
+import com.quevedo.inmobiliaria_backend.application.repositories.IContratoRepository;
 import com.quevedo.inmobiliaria_backend.infraestructure.mappers.ContratoMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,10 +20,9 @@ public class ContratoRepositoryJpa implements IContratoRepository {
     }
 
     @Override
-    public List<Contrato> readAll() {
-        return contratoRepositoryJpa.findAll()
-                .stream().map(ContratoMapper::fromEntity)
-                .toList();
+    public Page<Contrato> readAll(Pageable pageable) {
+        return contratoRepositoryJpa.findAll(pageable)
+                .map(ContratoMapper::fromEntity);
     }
 
     @Override

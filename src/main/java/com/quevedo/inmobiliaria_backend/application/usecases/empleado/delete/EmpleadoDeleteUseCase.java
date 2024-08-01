@@ -1,7 +1,7 @@
 package com.quevedo.inmobiliaria_backend.application.usecases.empleado.delete;
 
 import com.quevedo.inmobiliaria_backend.domain.models.Empleado;
-import com.quevedo.inmobiliaria_backend.domain.repositories.IEmpleadoRepository;
+import com.quevedo.inmobiliaria_backend.application.repositories.IEmpleadoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

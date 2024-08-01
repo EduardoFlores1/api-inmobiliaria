@@ -2,8 +2,8 @@ package com.quevedo.inmobiliaria_backend.application.usecases.empleado.readOne;
 
 import com.quevedo.inmobiliaria_backend.domain.models.Contrato;
 import com.quevedo.inmobiliaria_backend.domain.models.Empleado;
-import com.quevedo.inmobiliaria_backend.domain.repositories.IContratoRepository;
-import com.quevedo.inmobiliaria_backend.domain.repositories.IEmpleadoRepository;
+import com.quevedo.inmobiliaria_backend.application.repositories.IContratoRepository;
+import com.quevedo.inmobiliaria_backend.application.repositories.IEmpleadoRepository;
 import com.quevedo.inmobiliaria_backend.infraestructure.mappers.EmpleadoMapper;
 import com.quevedo.inmobiliaria_backend.presentation.dtos.empleado.EmpleadoDTO;
 import jakarta.persistence.EntityNotFoundException;

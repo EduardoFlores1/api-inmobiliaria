@@ -1,4 +1,4 @@
-package com.quevedo.inmobiliaria_backend.domain.repositories;
+package com.quevedo.inmobiliaria_backend.application.repositories;
 
 import com.quevedo.inmobiliaria_backend.domain.models.Empleado;
 

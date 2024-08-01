@@ -7,13 +7,13 @@ import com.quevedo.inmobiliaria_backend.application.usecases.empleado.readOne.IE
 import com.quevedo.inmobiliaria_backend.application.usecases.empleado.update.IEmpleadoUpdateUseCase;
 import com.quevedo.inmobiliaria_backend.presentation.dtos.empleado.EmpleadoCreateDTO;
 import com.quevedo.inmobiliaria_backend.presentation.dtos.empleado.EmpleadoDTO;
+import com.quevedo.inmobiliaria_backend.presentation.dtos.generic.PageableDTO;
 import com.quevedo.inmobiliaria_backend.presentation.dtos.generic.ResponseDTO;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/v1/empleados", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -34,8 +34,8 @@ public class EmpleadoController {
     }
 
     @GetMapping
-    public ResponseEntity<ResponseDTO<List<EmpleadoDTO>>> readAll() {
-        return ResponseEntity.ok(ResponseDTO.of(HttpStatus.OK, empleadoReadAllUseCase.execute()));
+    public ResponseEntity<ResponseDTO<Page<EmpleadoDTO>>> readAll(PageableDTO pageableDTO) {
+        return ResponseEntity.ok(ResponseDTO.of(HttpStatus.OK, empleadoReadAllUseCase.execute(pageableDTO)));
     }
 
     @GetMapping(value = "/{idEmpleado}")

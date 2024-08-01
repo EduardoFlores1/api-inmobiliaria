@@ -1,11 +1,12 @@
 package com.quevedo.inmobiliaria_backend.infraestructure.repositories.empleado;
 
 import com.quevedo.inmobiliaria_backend.domain.models.Empleado;
-import com.quevedo.inmobiliaria_backend.domain.repositories.IEmpleadoRepository;
+import com.quevedo.inmobiliaria_backend.application.repositories.IEmpleadoRepository;
 import com.quevedo.inmobiliaria_backend.infraestructure.mappers.EmpleadoMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -18,11 +19,9 @@ public class EmpleadoRepositoryJpa implements IEmpleadoRepository {
     }
 
     @Override
-    public List<Empleado> readAll() {
-        return empleadoRepositoryJpa.findAll()
-                .stream()
-                .map(EmpleadoMapper::fromEntity)
-                .toList();
+    public Page<Empleado> readAll(Pageable pageable) {
+        return empleadoRepositoryJpa.findAll(pageable)
+                .map(EmpleadoMapper::fromEntity);
     }
 
     @Override
