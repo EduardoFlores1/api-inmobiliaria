@@ -1,6 +1,7 @@
-package com.quevedo.inmobiliaria_backend.application.usecases.empleado.readAll;
+package com.quevedo.inmobiliaria_backend.application.usecases.empleado.impl;
 
 import com.quevedo.inmobiliaria_backend.application.repositories.IEmpleadoRepository;
+import com.quevedo.inmobiliaria_backend.application.usecases.empleado.IEmpleadoReadAllUseCase;
 import com.quevedo.inmobiliaria_backend.helpers.pageable.PageableUtil;
 import com.quevedo.inmobiliaria_backend.infraestructure.mappers.EmpleadoMapper;
 import com.quevedo.inmobiliaria_backend.presentation.dtos.empleado.EmpleadoDTO;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class EmpleadoReadAllUseCase implements IEmpleadoReadAllUseCase{
+public class EmpleadoReadAllUseCase implements IEmpleadoReadAllUseCase {
 
     private final IEmpleadoRepository empleadoRepository;
 

@@ -1,4 +1,4 @@
-package com.quevedo.inmobiliaria_backend.application.usecases.empleado.readOne;
+package com.quevedo.inmobiliaria_backend.application.usecases.empleado;
 
 import com.quevedo.inmobiliaria_backend.presentation.dtos.empleado.EmpleadoDTO;
 

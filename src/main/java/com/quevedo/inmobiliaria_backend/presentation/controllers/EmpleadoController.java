@@ -1,10 +1,10 @@
 package com.quevedo.inmobiliaria_backend.presentation.controllers;
 
-import com.quevedo.inmobiliaria_backend.application.usecases.empleado.create.IEmpleadoCreateUseCase;
-import com.quevedo.inmobiliaria_backend.application.usecases.empleado.delete.IEmpleadoDeleteUseCase;
-import com.quevedo.inmobiliaria_backend.application.usecases.empleado.readAll.IEmpleadoReadAllUseCase;
-import com.quevedo.inmobiliaria_backend.application.usecases.empleado.readOne.IEmpleadoReadOneUseCase;
-import com.quevedo.inmobiliaria_backend.application.usecases.empleado.update.IEmpleadoUpdateUseCase;
+import com.quevedo.inmobiliaria_backend.application.usecases.empleado.IEmpleadoCreateUseCase;
+import com.quevedo.inmobiliaria_backend.application.usecases.empleado.IEmpleadoDeleteUseCase;
+import com.quevedo.inmobiliaria_backend.application.usecases.empleado.IEmpleadoReadAllUseCase;
+import com.quevedo.inmobiliaria_backend.application.usecases.empleado.IEmpleadoReadOneUseCase;
+import com.quevedo.inmobiliaria_backend.application.usecases.empleado.IEmpleadoUpdateUseCase;
 import com.quevedo.inmobiliaria_backend.presentation.dtos.empleado.EmpleadoCreateDTO;
 import com.quevedo.inmobiliaria_backend.presentation.dtos.empleado.EmpleadoDTO;
 import com.quevedo.inmobiliaria_backend.presentation.dtos.generic.PageableDTO;

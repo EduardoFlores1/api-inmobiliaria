@@ -1,5 +1,6 @@
-package com.quevedo.inmobiliaria_backend.application.usecases.empleado.create;
+package com.quevedo.inmobiliaria_backend.application.usecases.empleado.impl;
 
+import com.quevedo.inmobiliaria_backend.application.usecases.empleado.IEmpleadoCreateUseCase;
 import com.quevedo.inmobiliaria_backend.domain.enums.TipoContrato;
 import com.quevedo.inmobiliaria_backend.domain.models.Contrato;
 import com.quevedo.inmobiliaria_backend.domain.models.Empleado;
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 
 @Service
-public class EmpleadoCreateUseCase implements IEmpleadoCreateUseCase{
+public class EmpleadoCreateUseCase implements IEmpleadoCreateUseCase {
 
     private final IEmpleadoRepository empleadoRepository;
     private final IContratoRepository contratoRepository;

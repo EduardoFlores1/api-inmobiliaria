@@ -27,7 +27,8 @@ public class ContratoMapper {
                 .fechaFin(contrato.getFechaFin())
                 .tipoContrato(contrato.getTipoContrato())
                 .cargo(CargoMapper.fromEntity(contrato.getCargo()))
-                .createAt(contrato.getCreatAt())
+                .createAt(contrato.getCreatedAt())
+                .estado(contrato.getEstado())
                 .build();
     }
 

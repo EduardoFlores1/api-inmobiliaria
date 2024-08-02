@@ -7,10 +7,17 @@ import java.util.Optional;
 
 public class PageableDTO implements Pageable {
 
-    private Integer page;
-    private Integer size;
-    private Optional<Integer> order;
-    private Optional<String> field;
+    private int page;
+    private int size;
+    private Optional<Integer> order = Optional.empty();
+    private Optional<String> field = Optional.empty();
+
+    public PageableDTO() {}
+
+    public PageableDTO(int page, int size) {
+        this.page = page;
+        this.size = size;
+    }
 
     public Optional<Integer> getOrder() {
         return order;
@@ -19,6 +26,31 @@ public class PageableDTO implements Pageable {
         return field;
     }
 
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setOrder(Optional<Integer> order) {
+        this.order = order;
+    }
+
+    public void setField(Optional<String> field) {
+        this.field = field;
+    }
+
+    //override
     @Override
     public int getPageNumber() {
         return page;
@@ -62,5 +94,15 @@ public class PageableDTO implements Pageable {
     @Override
     public boolean hasPrevious() {
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "PageableDTO{" +
+                "page=" + page +
+                ", size=" + size +
+                ", order=" + order +
+                ", field=" + field +
+                '}';
     }
 }

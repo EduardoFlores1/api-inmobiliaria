@@ -26,22 +26,22 @@ public class ContratoEntity {
     @ManyToOne
     @JoinColumn(name = "cargo_id", nullable = false)
     private CargoEntity cargo;
-    @Column(name = "create_at", nullable = false)
-    private LocalDateTime creatAt;
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
     @Column(name = "estado", nullable = false)
     private Boolean estado;
 
     public ContratoEntity() {
     }
 
-    public ContratoEntity(Long idContrato, EmpleadoEntity empleado, LocalDateTime fechaInicio, LocalDateTime fechaFin, TipoContrato tipoContrato, CargoEntity cargo, LocalDateTime creatAt, Boolean estado) {
+    public ContratoEntity(Long idContrato, EmpleadoEntity empleado, LocalDateTime fechaInicio, LocalDateTime fechaFin, TipoContrato tipoContrato, CargoEntity cargo, LocalDateTime createdAt, Boolean estado) {
         this.idContrato = idContrato;
         this.empleado = empleado;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.tipoContrato = tipoContrato;
         this.cargo = cargo;
-        this.creatAt = creatAt;
+        this.createdAt = createdAt;
         this.estado = estado;
     }
 
@@ -93,12 +93,12 @@ public class ContratoEntity {
         this.cargo = cargo;
     }
 
-    public LocalDateTime getCreatAt() {
-        return creatAt;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreatAt(LocalDateTime creatAt) {
-        this.creatAt = creatAt;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     public Boolean getEstado() {
@@ -118,7 +118,7 @@ public class ContratoEntity {
                 ", fechaFin=" + fechaFin +
                 ", tipoContrato=" + tipoContrato +
                 ", cargo=" + cargo +
-                ", creatAt=" + creatAt +
+                ", createdAt=" + createdAt +
                 ", estado=" + estado +
                 '}';
     }
